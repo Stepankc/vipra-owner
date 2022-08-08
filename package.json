@@ -1,0 +1,8 @@
+{
+  "name": "vipra-owner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Stepankc/vipra-owner.git",
+  "author": "BogdanDirtyDwarf <i21s045@students.it-college.ru>",
+  "license": "MIT"
+}
