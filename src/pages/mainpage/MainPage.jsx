@@ -1,15 +1,13 @@
 import React from 'react';
+import './styles.MainPage'
 
 const MainPage = () => {
     return (
-        <div>
-            <div className="container">
-                <h1>Test message</h1>
+        <div className='MainPage'>
+            <div className="globalcontainer">
+                <h1>You're in "Main page!"</h1>
                 <hr />
                 <div className="logo"></div>
-                <div className="box">
-                    <h2>Something</h2>
-                </div>
             </div>
         </div>
     );
