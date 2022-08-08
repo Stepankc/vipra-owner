@@ -2,7 +2,6 @@
 
 ## Scripts
 
-
 ### Start on 'http://localhost:1337/' (Mode: Development):
 ```sh
 yarn start

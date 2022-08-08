@@ -30,18 +30,20 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: ['@babel/polyfill', './index.jsx'],
+        main: ['@babel/polyfill', './index.js'],
         analytics: './analytics.ts'
     },
     resolve: {
-        extensions: ['.js', '.json', '.png', '.css'],
+        extensions: ['.js', '.json', '.png', '.css', '.jsx'],
         alias: {
-            '@styles': path.resolve(__dirname, 'src/styles')
+            '@styles': path.resolve(__dirname, 'src/styles'),
+            '@pages': path.resolve(__dirname, 'src/pages')
         }
     },
     optimization: optimization(),
     devServer: {
-        port: 1337
+        port: 1337,
+        historyApiFallback: true
     },
     output: {
         filename: '[name].[contenthash].js',
