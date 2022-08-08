@@ -1,40 +1,28 @@
 @import "~normalize.css";
 @font-face {
     font-family: 'Roboto';
-    src: url("../assets/fonts/Roboto-Regular.ttf") format('truetype');
+    src: url("../fonts/Roboto-Regular.ttf") format('truetype');
 }
 
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
-}
-
-.container {
-    padding-top: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-}
-
-.logo {
-    background-image: url("../assets/webpack-logo.png");
-    background-size: cover;
-    height: 200px;
-    width: 200px;
-    margin: 0 auto;
-}
-
-.box {
-    padding: 1rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    border: 1px solid #ccc;
+    color: #111111
 }
 
 h2 {
-    text-align: center;
-    color: darkblue;
+    color: #1f1f1f;
+}
+
+h3, h4, h5, h6, p {
+    color: #373737;
+}
+
+.globalcontainer {
+    padding-top: 2rem;
+    max-width: 1000px;
 }
