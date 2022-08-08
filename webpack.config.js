@@ -30,8 +30,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: ['@babel/polyfill', './index.js'],
-        analytics: './analytics.ts'
+        main: ['@babel/polyfill', './index.js']
     },
     resolve: {
         extensions: ['.js', '.json', '.png', '.css', '.jsx'],
