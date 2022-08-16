@@ -42,7 +42,7 @@ export default function EcommerceYearlySales() {
   return (
     <Card>
       <CardHeader
-        title="Общее потребление станций"
+        title="Станция №2"
         action={
           <TextField
             select
@@ -69,7 +69,7 @@ export default function EcommerceYearlySales() {
       {CHART_DATA.map((item) => (
         <Box key={item.year} sx={{ mt: 3, mx: 3 }} dir="ltr">
           {item.year === seriesData && (
-            <ReactApexChart type="area" series={item.data} options={chartOptions} height={494} />
+            <ReactApexChart type="area" series={item.data} options={chartOptions} height={182} />
           )}
         </Box>
       ))}

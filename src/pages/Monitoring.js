@@ -5,12 +5,14 @@ import useSettings from '../hooks/useSettings';
 // components
 import Page from '../components/Page';
 // sections
-import { 
+import {
   AnalyticsWidgetSummary,
   TotalOfCharges,
   InfoSession,
   BankingBalanceStatistics,
   AppNewInvoice,
+  MonitoringStantionsComponent1,
+  MonitoringStantionsComponent2,
 } from '../sections/monitoring';
 
 // ----------------------------------------------------------------------
@@ -37,15 +39,18 @@ export default function Monitoring() {
         <Divider sx={{ bgcolor: 'black', mb: 2 }} />
 
         <Grid container spacing={3}>
-          
+
           <Grid item xs={12} md={6} lg={8}>
-            <TotalOfCharges/>
+            <TotalOfCharges />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <InfoSession/>
+            <Stack spacing={2}>
+              <MonitoringStantionsComponent1 />
+              <MonitoringStantionsComponent2/>
+            </Stack>
           </Grid>
           <Grid item xs={12} md={12} lg={5}>
-            <BankingBalanceStatistics/>
+            <BankingBalanceStatistics />
           </Grid>
           <Grid item xs={12} lg={7}>
             <AppNewInvoice />
