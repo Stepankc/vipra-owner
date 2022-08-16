@@ -37,26 +37,7 @@ export default function Monitoring() {
         <Divider sx={{ bgcolor: 'black', mb: 2 }} />
 
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
-            <AnalyticsWidgetSummary title="Количество совершенных зарядок за текущий день" total={71400} icon={'icon-park-outline:battery-charge'} />
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={3}>
-            <AnalyticsWidgetSummary title="Количество заработанных денег за текущий день" total={1352831} color="info" icon={'ant-design:money-collect-outlined'} />
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={3}>
-            <AnalyticsWidgetSummary
-              title="Количество энергии за текущий день"
-              total={1723}
-              info={'кВт'}
-              color="warning"
-              icon={'bi:lightning-charge-fill'}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <AnalyticsWidgetSummary title="Длительность сессии" total={234} info={'мин'} color="error" icon={'bx:time-five'} />
-          </Grid>
+          
           <Grid item xs={12} md={6} lg={8}>
             <TotalOfCharges/>
           </Grid>

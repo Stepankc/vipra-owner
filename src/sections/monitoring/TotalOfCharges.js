@@ -42,7 +42,7 @@ export default function EcommerceYearlySales() {
   return (
     <Card>
       <CardHeader
-        title="Общее количество зарядок"
+        title="Общее потребление станций"
         action={
           <TextField
             select
