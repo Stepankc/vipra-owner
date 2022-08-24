@@ -22,9 +22,38 @@ const sidebarConfig = [
     subheader: 'Основной',
     items: [
       { title: 'Мониторинг', path: '/dashboard/monitoring', icon: ICONS.monitoring },
-      { title: 'Статистика', path: '/dashboard/statistics', icon: ICONS.statistics },
-      { title: 'Зарядные станции', path: '/dashboard/charging', icon: ICONS.charge },
-      { title: 'Чат', path: '/dashboard/chat', icon: ICONS.chat },
+      {
+        title: 'Мои станции',
+        path: '/dashboard/statistics',
+        icon: ICONS.statistics,
+        children: [
+          { title: 'Мои станции', path: '/dashboard/user/profileUser' },
+          { title: 'Добавление новой страницы', path: '/dashboard/user/newUser' },
+          { title: 'Страница одной станции', path: '/dashboard/user/profileUser' },
+        ],
+      },
+      {
+        title: 'Финансы',
+        path: '/dashboard/user',
+        icon: ICONS.user,
+        children: [
+          { title: 'Калькулятор расходов', path: '/dashboard/user/newUser' },
+          { title: 'Начисления', path: '/dashboard/user/profileUser' },
+          { title: 'Выплаты', path: '/dashboard/user/profileUser' },
+        ],
+      },
+      {
+        title: 'Техническая поддержка',
+        path: '/dashboard/user',
+        icon: ICONS.user,
+        children: [
+          { title: 'Чат', path: '/dashboard/chat' },
+          { title: 'Сервис', path: '/dashboard/user/profileUser' },
+          { title: 'Часто задаваемые вопросы', path: '/dashboard/user/profileUser' },
+        ],
+      },
+      { title: 'Отчётность', path: '/dashboard/charging', icon: ICONS.charge },
+      { title: 'Профиль', path: '/dashboard/user/newUser', icon: ICONS.chat },
       { title: 'Пользователи', path: '/dashboard/users', icon: ICONS.user },
       { title: 'Владельцы станций', path: '/dashboard/owners', icon: ICONS.user },
       { title: 'Настройка сервиса', path: '/dashboard/settingsService', icon: ICONS.setting },
