@@ -14,7 +14,7 @@ const CHART_SIZE = { width: 106, height: 106 };
 const TOTAL_CHECK_OUT = 18472;
 const CHART_DATA_CHECK_OUT = [64];
 
-export default function NetworkStatus() {
+export default function AddValue() {
   const theme = useTheme();
 
   const chartOptionsCheckIn = merge(BaseOptionChart(), {

@@ -21,6 +21,11 @@ import {
   MonitoringStantionsComponent2,
   MonitoringStateComponent,
   NetworkStatus,
+  Booked,
+  Broken,
+  Offline,
+  Online,
+  OnlineWaiting
 } from "../sections/monitoring";
 
 // ----------------------------------------------------------------------
@@ -28,9 +33,8 @@ import {
 export default function Monitoring() {
   const { themeStretch } = useSettings();
   const current = new Date();
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
+  const date = `${current.getDate()}/${current.getMonth() + 1
+    }/${current.getFullYear()}`;
 
   return (
     <Page title="Мониторинг">
@@ -63,17 +67,34 @@ export default function Monitoring() {
               <MonitoringStantionsComponent2 />
             </Stack>
           </Grid>
-          <Grid item xs={3} lg={2}>
-            <NetworkStatus />
-          </Grid>
-          <Grid item xs={3} lg={2}>
-            <NetworkStatus />
-          </Grid>
-          <Grid item xs={3} lg={2}>
-            <NetworkStatus />
-          </Grid>
-          <Grid item xs={3} lg={2}>
-            <NetworkStatus />
+          <Grid item container spacing={1} lg={8}>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <NetworkStatus />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <Booked />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <Broken />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <Offline />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <Online />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <OnlineWaiting />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <NetworkStatus />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <NetworkStatus />
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+              <NetworkStatus />
+            </Grid>
           </Grid>
           <Grid item xs={12} md={12} lg={4}>
             <MonitoringStateComponent />

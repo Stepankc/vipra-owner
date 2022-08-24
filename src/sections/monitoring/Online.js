@@ -11,10 +11,10 @@ import { BaseOptionChart } from '../../components/chart';
 // ----------------------------------------------------------------------
 
 const CHART_SIZE = { width: 106, height: 106 };
-const TOTAL_CHECK_OUT = 18472;
-const CHART_DATA_CHECK_OUT = [64];
+const TOTAL_CHECK_OUT = 1488;
+const CHART_DATA_CHECK_OUT = [43];
 
-export default function NetworkStatus() {
+export default function Online() {
   const theme = useTheme();
 
   const chartOptionsCheckIn = merge(BaseOptionChart(), {
@@ -48,20 +48,20 @@ export default function NetworkStatus() {
 
   return (
     <Card sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', py: 8, height: '200px', justifyContent: 'space-evenly' }}>
-          <ReactApexChart
-            type="radialBar"
-            series={CHART_DATA_CHECK_OUT}
-            options={chartOptionsCheckOut}
-            {...CHART_SIZE}
-          />
-          <Box>
-            <Typography variant="h4" textAlign={'center'}>
-              {fNumber(TOTAL_CHECK_OUT)}
-            </Typography>
-            <Typography variant="body2" textAlign={'center'}>
-              Число занятых станций
-            </Typography>
-          </Box>
+      <ReactApexChart
+        type="radialBar"
+        series={CHART_DATA_CHECK_OUT}
+        options={chartOptionsCheckOut}
+        {...CHART_SIZE}
+      />
+      <Box>
+        <Typography variant="h4" textAlign={'center'}>
+          {fNumber(TOTAL_CHECK_OUT)}
+        </Typography>
+        <Typography variant="body2" textAlign={'center'}>
+          Число включенных станций в режиме ожидания
+        </Typography>
+      </Box>
     </Card>
   );
 }
