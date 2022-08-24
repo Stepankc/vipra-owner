@@ -11,10 +11,10 @@ import { BaseOptionChart } from '../../components/chart';
 // ----------------------------------------------------------------------
 
 const CHART_SIZE = { width: 106, height: 106 };
-const TOTAL_CHECK_OUT = 18472;
-const CHART_DATA_CHECK_OUT = [64];
+const TOTAL_CHECK_OUT = 0;
+const CHART_DATA_CHECK_OUT = [0];
 
-export default function NetworkStatus() {
+export default function Offline() {
   const theme = useTheme();
 
   const chartOptionsCheckIn = merge(BaseOptionChart(), {
@@ -59,7 +59,7 @@ export default function NetworkStatus() {
               {fNumber(TOTAL_CHECK_OUT)}
             </Typography>
             <Typography variant="body2" textAlign={'center'}>
-              Число занятых станций
+              Число выключенных станций
             </Typography>
           </Box>
     </Card>
