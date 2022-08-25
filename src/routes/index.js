@@ -33,6 +33,7 @@ export default function Router() {
         { path: 'monitoring', element: <Monitoring /> },
         { path: 'statistics', element: <Statistics /> },
         { path: 'charging', element: <Charging /> },
+        { path: 'ReportingPage', element: <ReportingPage /> },
         {
           path: 'chat',
           children: [
@@ -43,7 +44,6 @@ export default function Router() {
         },
         { path: 'users', element: <Users /> },
         { path: 'owners', element: <Owners /> },
-        { path: 'settingsService', element: <SettingsService /> },
         {
           path: 'station',
           children: [
@@ -54,12 +54,23 @@ export default function Router() {
           ],
         },
         {
-          path: 'user',
+          path: 'finances',
           children: [
-            { element: <Navigate to="/dashboard/station/AddNewStantion" replace />, index: true },
-            { path: 'MyStation', element: <MyStation /> },
-            { path: 'AddNewStantion', element: <AddNewStantion /> },
-            { path: 'PageOfOneStation', element: <PageOfOneStation /> },
+            { element: <Navigate to="/dashboard/finances/CalculatorExp" replace />, index: true },
+            { path: 'CalculatorExp', element: <CalculatorExp /> },
+            { path: 'Accruals', element: <Accruals /> },
+            { path: 'Payments', element: <Payments /> },
+          ],
+        },
+        {
+          path: 'support',
+          children: [
+            { element: <Navigate to="/dashboard/support/AddNewStantion" replace />, index: true },
+            { path: 'Chat', element: <Chat /> },
+            { path: 'new', element: <Chat /> },
+            { path: ':conversationKey', element: <Chat /> },
+            { path: 'ServicePage', element: <ServicePage /> },
+            { path: 'FAQ', element: <FAQ /> },
           ],
         },
         {
@@ -95,11 +106,13 @@ const ProfileUser = Loadable(lazy(() => import('../pages/ProfileUser')));
 const Owners = Loadable(lazy(() => import('../pages/Owners')));
 const ProfileOwner = Loadable(lazy(() => import('../pages/ProfileOwner')));
 const NewOwner = Loadable(lazy(() => import('../pages/NewOwner')));
-const SettingsService = Loadable(lazy(() => import('../pages/SettingsService')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const AddNewStantion = Loadable(lazy(() => import('../pages/AddNewStantion')));
 const MyStation = Loadable(lazy(() => import('../pages/MyStation')));
 const PageOfOneStation = Loadable(lazy(() => import('../pages/PageOfOneStation')));
-const ExpenseСalculator = Loadable(lazy(() => import('../pages/ExpenseСalculator')));
 const Accruals = Loadable(lazy(() => import('../pages/Accruals')));
 const Payments = Loadable(lazy(() => import('../pages/Payments')));
+const CalculatorExp = Loadable(lazy(() => import('../pages/CalculatorExp')));
+const ServicePage = Loadable(lazy(() => import('../pages/ServicePage')));
+const FAQ = Loadable(lazy(() => import('../pages/FAQ')));
+const ReportingPage = Loadable(lazy(() => import('../pages/ReportingPage')));

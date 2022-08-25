@@ -12,7 +12,10 @@ const ICONS = {
   monitoring: getIcon('ic_dashboard'),
   chat: getIcon('ic_chat'),
   setting: getIcon('ic_settings'),
-  charge: getIcon('ic_charge')
+  charge: getIcon('ic_charge'),
+  finance: getIcon('ic_finance'),
+  support: getIcon('ic_support'),
+  report: getIcon('ic_report')
 };
 
 const sidebarConfig = [
@@ -24,7 +27,7 @@ const sidebarConfig = [
       { title: 'Мониторинг', path: '/dashboard/monitoring', icon: ICONS.monitoring },
       {
         title: 'Мои станции',
-        path: '/dashboard/statistics',
+        path: '/dashboard/station',
         icon: ICONS.statistics,
         children: [
           { title: 'Мои станции', path: '/dashboard/station/MyStation' },
@@ -34,29 +37,28 @@ const sidebarConfig = [
       },
       {
         title: 'Финансы',
-        path: '/dashboard/statistics',
-        icon: ICONS.user,
+        path: '/dashboard/finances',
+        icon: ICONS.finance,
         children: [
-          { title: 'Калькулятор расходов', path: '/dashboard/finance/ExpenseСalculator' },
-          { title: 'Начисления', path: '/dashboard/finance/profileUser' },
-          { title: 'Выплаты', path: '/dashboard/finance/profileUser' },
+          { title: 'Калькулятор расходов', path: '/dashboard/finances/CalculatorExp' },
+          { title: 'Начисления', path: '/dashboard/finances/Accruals' },
+          { title: 'Выплаты', path: '/dashboard/finances/Payments' },
         ],
       },
       {
         title: 'Техническая поддержка',
-        path: '/dashboard/user',
-        icon: ICONS.user,
+        path: '/dashboard/support',
+        icon: ICONS.support,
         children: [
-          { title: 'Чат', path: '/dashboard/chat' },
-          { title: 'Сервис', path: '/dashboard/user/profileUser' },
-          { title: 'Часто задаваемые вопросы', path: '/dashboard/user/profileUser' },
+          { title: 'Чат', path: '/dashboard/support/chat' },
+          { title: 'Сервис', path: '/dashboard/support/ServicePage' },
+          { title: 'Часто задаваемые вопросы', path: '/dashboard/support/FAQ' },
         ],
       },
-      { title: 'Отчётность', path: '/dashboard/charging', icon: ICONS.charge },
-      { title: 'Профиль', path: '/dashboard/user/newUser', icon: ICONS.chat },
+      { title: 'Отчётность', path: '/dashboard/ReportingPage', icon: ICONS.report },
+      { title: 'Профиль', path: '/dashboard/user/newUser', icon: ICONS.user },
       { title: 'Пользователи', path: '/dashboard/users', icon: ICONS.user },
-      { title: 'Владельцы станций', path: '/dashboard/owners', icon: ICONS.user },
-      { title: 'Настройка сервиса', path: '/dashboard/settingsService', icon: ICONS.setting },
+      { title: 'Владельцы станций', path: '/dashboard/owners', icon: ICONS.user }
     ],
   },
 
