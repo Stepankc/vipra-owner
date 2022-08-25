@@ -47,8 +47,8 @@ export default function Router() {
         {
           path: 'user',
           children: [
-            { element: <Navigate to="/dashboard/user/newUser" replace />, index: true },
-            { path: 'newUser', element: <NewUser /> },
+            { element: <Navigate to="/dashboard/user/addnewstantion" replace />, index: true },
+            { path: 'addnewstantion', element: <AddNewStantion /> },
             { path: 'profileUser', element: <ProfileUser /> },
           ],
         },
@@ -87,3 +87,4 @@ const ProfileOwner = Loadable(lazy(() => import('../pages/ProfileOwner')));
 const NewOwner = Loadable(lazy(() => import('../pages/NewOwner')));
 const SettingsService = Loadable(lazy(() => import('../pages/SettingsService')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
+const AddNewStantion = Loadable(lazy(() => import('../pages/AddNewStantion')));
