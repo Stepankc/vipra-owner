@@ -45,11 +45,21 @@ export default function Router() {
         { path: 'owners', element: <Owners /> },
         { path: 'settingsService', element: <SettingsService /> },
         {
+          path: 'station',
+          children: [
+            { element: <Navigate to="/dashboard/station/AddNewStantion" replace />, index: true },
+            { path: 'MyStation', element: <MyStation /> },
+            { path: 'AddNewStantion', element: <AddNewStantion /> },
+            { path: 'PageOfOneStation', element: <PageOfOneStation /> },
+          ],
+        },
+        {
           path: 'user',
           children: [
-            { element: <Navigate to="/dashboard/user/addnewstantion" replace />, index: true },
-            { path: 'addnewstantion', element: <AddNewStantion /> },
-            { path: 'profileUser', element: <ProfileUser /> },
+            { element: <Navigate to="/dashboard/station/AddNewStantion" replace />, index: true },
+            { path: 'MyStation', element: <MyStation /> },
+            { path: 'AddNewStantion', element: <AddNewStantion /> },
+            { path: 'PageOfOneStation', element: <PageOfOneStation /> },
           ],
         },
         {
@@ -88,3 +98,8 @@ const NewOwner = Loadable(lazy(() => import('../pages/NewOwner')));
 const SettingsService = Loadable(lazy(() => import('../pages/SettingsService')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const AddNewStantion = Loadable(lazy(() => import('../pages/AddNewStantion')));
+const MyStation = Loadable(lazy(() => import('../pages/MyStation')));
+const PageOfOneStation = Loadable(lazy(() => import('../pages/PageOfOneStation')));
+const ExpenseСalculator = Loadable(lazy(() => import('../pages/ExpenseСalculator')));
+const Accruals = Loadable(lazy(() => import('../pages/Accruals')));
+const Payments = Loadable(lazy(() => import('../pages/Payments')));

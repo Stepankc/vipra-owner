@@ -27,19 +27,19 @@ const sidebarConfig = [
         path: '/dashboard/statistics',
         icon: ICONS.statistics,
         children: [
-          { title: 'Мои станции', path: '/dashboard/user/profileUser' },
-          { title: 'Добавление новой страницы', path: '/dashboard/user/newUser' },
-          { title: 'Страница одной станции', path: '/dashboard/user/profileUser' },
+          { title: 'Мои станции', path: '/dashboard/station/MyStation' },
+          { title: 'Добавление новой страницы', path: '/dashboard/station/AddNewStantion' },
+          { title: 'Страница одной станции', path: '/dashboard/station/PageOfOneStation' },
         ],
       },
       {
         title: 'Финансы',
-        path: '/dashboard/user',
+        path: '/dashboard/statistics',
         icon: ICONS.user,
         children: [
-          { title: 'Калькулятор расходов', path: '/dashboard/user/newUser' },
-          { title: 'Начисления', path: '/dashboard/user/profileUser' },
-          { title: 'Выплаты', path: '/dashboard/user/profileUser' },
+          { title: 'Калькулятор расходов', path: '/dashboard/finance/ExpenseСalculator' },
+          { title: 'Начисления', path: '/dashboard/finance/profileUser' },
+          { title: 'Выплаты', path: '/dashboard/finance/profileUser' },
         ],
       },
       {
