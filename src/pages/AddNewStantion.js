@@ -1,18 +1,15 @@
 import * as React from 'react';
 // @mui
-import { Container, Typography, Divider, Grid, TextField, Button, Stack } from '@mui/material';
+import { Container, Typography, Divider, Grid, TextField, Button } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import FormLabel from '@mui/material/FormLabel';
 // hooks
 import useSettings from '../hooks/useSettings';
-// _mock_
-import { _userList } from '../_mock';
 // components
 import Page from '../components/Page';
 // sections
