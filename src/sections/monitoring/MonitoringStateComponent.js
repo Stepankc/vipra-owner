@@ -10,8 +10,8 @@ import { BaseOptionChart } from '../../components/chart';
 
 // ----------------------------------------------------------------------
 
-const CHART_HEIGHT = 372;
-const LEGEND_HEIGHT = 72;
+const CHART_HEIGHT = 526;
+const LEGEND_HEIGHT = 172;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({
   height: CHART_HEIGHT,
@@ -64,8 +64,8 @@ export default function InfoSession() {
   return (
     <Card>
       <CardHeader title="Состояние станций за 24 часа" />
-      <ChartWrapperStyle dir="ltr">
-        <ReactApexChart type="pie" series={CHART_DATA} options={chartOptions} height={280} />
+      <ChartWrapperStyle dir="ltr" >
+        <ReactApexChart type="pie" series={CHART_DATA} options={chartOptions} height={300} />
       </ChartWrapperStyle>
     </Card>
   );
