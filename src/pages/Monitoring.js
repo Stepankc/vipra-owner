@@ -13,10 +13,7 @@ import useSettings from "../hooks/useSettings";
 import Page from "../components/Page";
 // sections
 import {
-  AnalyticsWidgetSummary,
   TotalOfCharges,
-  InfoSession,
-  BankingBalanceStatistics,
   MonitoringStantionsComponent1,
   MonitoringStantionsComponent2,
   MonitoringStateComponent,
