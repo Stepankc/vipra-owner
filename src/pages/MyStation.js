@@ -1,6 +1,6 @@
 import * as React from 'react';
 // @mui
-import { Container, Typography, Box, Chip, Button, Fab, Divider, Card, Grid, Stack, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
+import { Container, Typography, Box, Chip, Button, Fab, Divider, Card, Grid, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 // hooks
 import useSettings from '../hooks/useSettings';
 // components
@@ -18,7 +18,7 @@ export default function PageTwo() {
   };
 
   return (
-    <Page title="Page qwe">
+    <Page title="Станция 1">
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container >
           <Grid mb={2} xs={12} sm={12} md={12} lg={4} xl={4} item display={'flex'} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} >
