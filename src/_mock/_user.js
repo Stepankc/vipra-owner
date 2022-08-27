@@ -133,3 +133,11 @@ export const _userList = [...Array(24)].map((_, index) => ({
   status: randomInArray(['active', 'banned']),
   role: _mock.role(index),
 }));
+
+export const _expenseTable = [...Array(10)].map((_, index) => ({
+  id: _mock.id(index),
+  time: randomInArray(['01/05/2002', '01/12/2020','21/02/2022']),
+  summ: _mock.number.price(index),
+  typeExpense: randomInArray(['энергозатраты', '']),
+  typeIncome: randomInArray(['Заработок', 'бонус','']),
+}));
