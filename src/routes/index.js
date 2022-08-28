@@ -42,8 +42,6 @@ export default function Router() {
             { path: ':conversationKey', element: <Chat /> },
           ],
         },
-        { path: 'users', element: <Users /> },
-        { path: 'owners', element: <Owners /> },
         {
           path: 'station',
           children: [
@@ -73,14 +71,6 @@ export default function Router() {
             { path: 'FAQ', element: <FAQ /> },
           ],
         },
-        {
-          path: 'owner',
-          children: [
-            { element: <Navigate to="/dashboard/owner/newOwner" replace />, index: true },
-            { path: 'newOwner', element: <NewOwner /> },
-            { path: 'profileOwner', element: <ProfileOwner /> },
-          ],
-        },
       ],
     },
     {
@@ -100,12 +90,6 @@ const Monitoring = Loadable(lazy(() => import('../pages/Monitoring')));
 const Statistics = Loadable(lazy(() => import('../pages/Statistics')));
 const Charging = Loadable(lazy(() => import('../pages/Charging')));
 const Chat = Loadable(lazy(() => import('../pages/Chat')));
-const Users = Loadable(lazy(() => import('../pages/Users')));
-const NewUser = Loadable(lazy(() => import('../pages/NewUser')));
-const ProfileUser = Loadable(lazy(() => import('../pages/ProfileUser')));
-const Owners = Loadable(lazy(() => import('../pages/Owners')));
-const ProfileOwner = Loadable(lazy(() => import('../pages/ProfileOwner')));
-const NewOwner = Loadable(lazy(() => import('../pages/NewOwner')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const AddNewStantion = Loadable(lazy(() => import('../pages/AddNewStantion')));
 const MyStation = Loadable(lazy(() => import('../pages/MyStation')));

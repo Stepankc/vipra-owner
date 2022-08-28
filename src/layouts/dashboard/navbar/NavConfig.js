@@ -57,36 +57,9 @@ const sidebarConfig = [
       },
       { title: 'Отчётность', path: '/dashboard/ReportingPage', icon: ICONS.report },
       { title: 'Профиль', path: '/dashboard/user/newUser', icon: ICONS.user },
-      { title: 'Пользователи', path: '/dashboard/users', icon: ICONS.user },
-      { title: 'Владельцы станций', path: '/dashboard/owners', icon: ICONS.user }
     ],
   },
 
-  // MANAGEMENT
-  // ----------------------------------------------------------------------
-  {
-    subheader: 'Управление',
-    items: [
-      {
-        title: 'Пользователи',
-        path: '/dashboard/user',
-        icon: ICONS.user,
-        children: [
-          { title: 'Новый пользователь', path: '/dashboard/user/newUser' },
-          { title: 'Профиль пользователя', path: '/dashboard/user/profileUser' },
-        ],
-      },
-      {
-        title: 'Владельцы станций',
-        path: '/dashboard/owner',
-        icon: ICONS.user,
-        children: [
-          { title: 'Профиль владельца', path: '/dashboard/owner/profileOwner' },
-          { title: 'Новый владелец', path: '/dashboard/owner/newOwner' },
-        ],
-      },
-    ],
-  },
 ];
 
 export default sidebarConfig;
