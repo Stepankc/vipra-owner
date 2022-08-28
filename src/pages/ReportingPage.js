@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 // @mui
 import {
@@ -111,7 +111,6 @@ export default function UserCreate() {
     (!dataFiltered.length && !!filterStatus) ||
     (!dataFiltered.length && !!filterService);
 
-  const { pathname } = useLocation();
 
   return (
     <Page title="Отчётность">
