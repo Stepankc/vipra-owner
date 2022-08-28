@@ -34,6 +34,7 @@ export default function Router() {
         { path: 'statistics', element: <Statistics /> },
         { path: 'charging', element: <Charging /> },
         { path: 'ReportingPage', element: <ReportingPage /> },
+        { path: 'Profile', element: <Profile /> },
         {
           path: 'chat',
           children: [
@@ -100,3 +101,4 @@ const CalculatorExp = Loadable(lazy(() => import('../pages/CalculatorExp')));
 const ServicePage = Loadable(lazy(() => import('../pages/ServicePage')));
 const FAQ = Loadable(lazy(() => import('../pages/FAQ')));
 const ReportingPage = Loadable(lazy(() => import('../pages/ReportingPage')));
+const Profile = Loadable(lazy(() => import('../pages/Profile')));

@@ -56,7 +56,7 @@ const sidebarConfig = [
         ],
       },
       { title: 'Отчётность', path: '/dashboard/ReportingPage', icon: ICONS.report },
-      { title: 'Профиль', path: '/dashboard/user/newUser', icon: ICONS.user },
+      { title: 'Профиль', path: '/dashboard/Profile', icon: ICONS.user },
     ],
   },
 
