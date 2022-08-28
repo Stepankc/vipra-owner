@@ -165,3 +165,8 @@ export const _EarnedInDay = {
   income: randomNumberRange(400, 1000),
   energy: randomNumberRange(99, 399),
 };
+
+export const _ImgForOneStation = [...Array(6)].map((_, index) => ({
+  id: index,
+  image: _mock.image.feed(index),
+}));
