@@ -12,7 +12,7 @@ InvoiceTableRow.propTypes = {
   onDeleteRow: PropTypes.func,
 };
 
-export default function InvoiceTableRow({ row, selected, onSelectRow, onViewRow, onDeleteRow }) {
+export default function InvoiceTableRow({ row, selected }) {
 
   const { time, summ, typeAccrual } = row;
 
@@ -24,7 +24,7 @@ export default function InvoiceTableRow({ row, selected, onSelectRow, onViewRow,
       </TableCell>
 
       <TableCell align="left" sx={{ textTransform: 'capitalize' }}>
-        +{summ} руб
+        {summ} руб
       </TableCell>
 
       <TableCell align="left" sx={{ textTransform: 'capitalize' }}>
