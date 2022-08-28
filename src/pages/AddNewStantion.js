@@ -35,6 +35,8 @@ export default function AddNewStantion() {
     setLocation(event.target.value);
   };
 
+  const [radio, setRadio] = React.useState('Цена за минуту');
+
   return (
     <Page title="Добавить новую страницу">
       <Container maxWidth={themeStretch ? false : 'xl'}>
@@ -132,9 +134,9 @@ export default function AddNewStantion() {
               <Grid item mb={2} xs={12} sm={12} md={12} lg={6} xl={6}>
                 <Grid>
                   <FormControl>
-                    <RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group">
-                      <FormControlLabel value="min" control={<Radio />} label="Цена за минуту" />
-                      <FormControlLabel value="kvt" control={<Radio />} label="Цена за кВт" />
+                    <RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group" defaultValue="min">
+                      <FormControlLabel control={<Radio />} label="Цена за минуту" checked={radio === 'Цена за минуту'} value="min" onClick={() => setRadio('Цена за минуту')} />
+                      <FormControlLabel control={<Radio />} label="Цена за кВт" checked={radio === 'Цена за кВт'} value="kvt" onClick={() => setRadio('Цена за кВт')} />
                     </RadioGroup>
                   </FormControl>
                 </Grid>
@@ -144,7 +146,7 @@ export default function AddNewStantion() {
                   </Grid>
                   <Grid item xs={6} sm={6} md={6} lg={6} display={'flex'} alignItems={'center'}>
                     <Typography variant='body1' paragraph>
-                      Цена за кВт
+                      {radio}
                     </Typography>
                   </Grid>
                 </Grid>
