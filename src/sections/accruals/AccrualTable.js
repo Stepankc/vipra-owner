@@ -1,10 +1,7 @@
-import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // @mui
 import {
-  Container,
-  Typography,
-  Divider,
   Box,
   Card,
   Table,
@@ -13,41 +10,32 @@ import {
   IconButton,
   TableContainer,
   TablePagination,
-  Grid,
 } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../routes/paths';
-
+import { PATH_DASHBOARD } from '../../routes/paths';
 // hooks
-import useSettings from '../hooks/useSettings';
-import useTabs from '../hooks/useTabs';
-import useTable, { getComparator, emptyRows } from '../hooks/useTable';
+import useTabs from '../../hooks/useTabs';
+import useTable, { getComparator, emptyRows } from '../../hooks/useTable';
 // _mock_
-import { _invoices } from '../_mock';
+import { _accrualTable } from '../../_mock';
 // components
-import Page from '../components/Page';
-import Iconify from '../components/Iconify';
-import Scrollbar from '../components/Scrollbar';
-import { TableEmptyRows, TableHeadCustom, TableNoData, TableSelectedActions } from '../components/table';
+import Iconify from '../../components/Iconify';
+import Scrollbar from '../../components/Scrollbar';
+import { TableEmptyRows, TableHeadCustom, TableNoData, TableSelectedActions } from '../../components/table';
 // sections
-import CheckStats from '../sections/statistics/CheckStats';
-import { InvoiceTableRow } from '../sections/charging/list';
-import { CountEnergy, CountMoney, InfoConnect, CountSession } from '../sections/reportingPage';
+import AccrualTableRow from './AccrualTableRow'
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'invoiceNumber', label: 'Client', align: 'left' },
-  { id: 'createDate', label: 'Create', align: 'left' },
-  { id: 'dueDate', label: 'Due', align: 'left' },
-  { id: 'price', label: 'Amount', align: 'center', width: 140 },
-  { id: 'sent', label: 'Sent', align: 'center', width: 140 },
-  { id: 'status', label: 'Status', align: 'left' },
-  { id: '' },
+  { id: 'date', label: 'Период', align: 'left' },
+  { id: 'summ', label: 'Сумма', align: 'left' },
+  { id: 'typeAccrual', label: 'Тип начисления', align: 'left' },
 ];
 
-export default function UserCreate() {
-  const { themeStretch } = useSettings();
+// ----------------------------------------------------------------------
+
+export default function InvoiceList() {
 
   const navigate = useNavigate();
 
@@ -68,13 +56,14 @@ export default function UserCreate() {
     onChangeRowsPerPage,
   } = useTable({ defaultOrderBy: 'createDate' });
 
-  const [tableData, setTableData] = useState(_invoices);
+  const [tableData, setTableData] = useState(_accrualTable);
 
-  const [filterName] = useState('');
 
   const [filterService] = useState('all');
 
   const { currentTab: filterStatus } = useTabs('all');
+
+
 
   const handleDeleteRow = (id) => {
     const deleteRow = tableData.filter((row) => row.id !== id);
@@ -99,7 +88,6 @@ export default function UserCreate() {
   const dataFiltered = applySortFilter({
     tableData,
     comparator: getComparator(order, orderBy),
-    filterName,
     filterService,
     filterStatus,
   });
@@ -107,27 +95,11 @@ export default function UserCreate() {
   const denseHeight = dense ? 56 : 76;
 
   const isNotFound =
-    (!dataFiltered.length && !!filterName) ||
     (!dataFiltered.length && !!filterStatus) ||
     (!dataFiltered.length && !!filterService);
 
-  const { pathname } = useLocation();
 
   return (
-    <Page title="Отчётность">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
-        <Typography variant="h3" component="h1" paragraph>
-          Отчётность
-        </Typography>
-        <Divider sx={{ bgcolor: 'black', mb: 2 }} />
-        <Typography variant="h6" component="h3" paragraph>
-          Для просмотра статистики, выберите нужные фильтры
-        </Typography>
-        <CheckStats/>
-        <Divider sx={{ bgcolor: 'black', mb: 2, mt: 2 }} />
-        <Typography variant="h6" component="h3" paragraph>
-          Аналитика
-        </Typography>
         <Card>
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800, position: 'relative' }}>
@@ -143,11 +115,12 @@ export default function UserCreate() {
                     )
                   }
                   actions={
-                    <Tooltip title="Delete">
-                      <IconButton color="primary" onClick={() => handleDeleteRows(selected)}>
-                        <Iconify icon={'eva:trash-2-outline'} />
-                      </IconButton>
-                    </Tooltip>
+
+                      <Tooltip title="Delete">
+                        <IconButton color="primary" onClick={() => handleDeleteRows(selected)}>
+                          <Iconify icon={'eva:trash-2-outline'} />
+                        </IconButton>
+                      </Tooltip>
                   }
                 />
               )}
@@ -160,17 +133,11 @@ export default function UserCreate() {
                   rowCount={tableData.length}
                   numSelected={selected.length}
                   onSort={onSort}
-                  onSelectAllRows={(checked) =>
-                    onSelectAllRows(
-                      checked,
-                      tableData.map((row) => row.id)
-                    )
-                  }
                 />
 
                 <TableBody>
                   {dataFiltered.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-                    <InvoiceTableRow
+                    <AccrualTableRow
                       key={row.id}
                       row={row}
                       selected={selected.includes(row.id)}
@@ -192,7 +159,7 @@ export default function UserCreate() {
           <Box sx={{ position: 'relative' }}>
             <TablePagination
               rowsPerPageOptions={[5, 10, 25]}
-              labelRowsPerPage={'показывать'}
+              labelRowsPerPage={"показывать"}
               component="div"
               count={dataFiltered.length}
               rowsPerPage={rowsPerPage}
@@ -202,27 +169,10 @@ export default function UserCreate() {
             />
           </Box>
         </Card>
-        <Grid container spacing={1} mt={2}>
-        <Grid item xs={12} sm={4} md={4}>
-          <CountEnergy />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4}>
-          <CountMoney />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4}>
-          <CountSession />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4}>
-          <InfoConnect />
-        </Grid>
-        <Grid item xs={12} sm={4} md={4}>
-          <CountEnergy />
-        </Grid>
-        </Grid>
-      </Container>
-    </Page>
   );
 }
+
+// ----------------------------------------------------------------------
 
 function applySortFilter({
   tableData,

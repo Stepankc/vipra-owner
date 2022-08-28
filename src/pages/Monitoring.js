@@ -47,7 +47,7 @@ export default function Monitoring() {
           </Typography>
           <Typography variant="body1" paragraph>
             сегодня: {date}
-            <Button sx={{ ml: 1 }} variant="contained">
+            <Button sx={{ ml: 5 }} variant="contained">
               Обновить данные
             </Button>
           </Typography>
