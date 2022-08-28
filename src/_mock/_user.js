@@ -160,3 +160,21 @@ export const _totalSum = {
   income: randomNumberRange(400, 1000),
   expense: randomNumberRange(99, 399),
 };
+
+export const _EarnedInDay = {
+  income: randomNumberRange(400, 1000),
+  energy: randomNumberRange(99, 399),
+};
+
+export const _ImgForOneStation = [...Array(6)].map((_, index) => ({
+  id: index,
+  image: _mock.image.feed(index),
+}));
+
+export const _TimeLineMock = [...Array(5)].map((_, index) => ({
+  id: index,
+  createDate: ['01/05/2002', '01/12/2020','21/02/2022','01/6/2022','21/06/2021'][index],
+  time: ['19:00','14:54','12:23','16:21','10:22'][index],
+  status: ['Идёт зарядка', 'Страница заблокирована','Станция включена','Станция выключена','Ошибка в работе станции'][index],
+  info: ['','Время платного ожидания - 10 мин','станция работает 20 мин','','Код ошибки - 100 Сообщить в поддержку'][index]
+}));
