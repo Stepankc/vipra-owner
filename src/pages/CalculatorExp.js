@@ -11,7 +11,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Stack,
 } from "@mui/material";
 // hooks
 import useSettings from "../hooks/useSettings";
