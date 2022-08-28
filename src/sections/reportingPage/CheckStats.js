@@ -15,8 +15,6 @@ import { FormProvider, RHFSelect } from '../../components/hook-form';
 export default function UserNewEditForm() {
 
   const NewUserSchema = Yup.object().shape({
-    country: Yup.string().required('country is required'),
-    city: Yup.string().required('City is required'),
   });
 
   const methods = useForm({
@@ -26,7 +24,7 @@ export default function UserNewEditForm() {
   return (
     <FormProvider methods={methods}>
       <Grid container justifyContent={'space-between'}>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} md={2} mb={1}>
           <RHFSelect name="Регион" label="Регион" placeholder="Регион">
             <option value="" />
             {region.map((option) => (
@@ -36,7 +34,7 @@ export default function UserNewEditForm() {
             ))}
           </RHFSelect>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} mb={1}>
           <Stack direction={'column'} justifyContent="space-between" alignItems="baseline" spacing={2}>
             <RHFSelect name="Производитель зарядной станции" label="Производитель зарядной станции" placeholder="Производитель зарядной станции">
               <option value="" />
@@ -56,7 +54,7 @@ export default function UserNewEditForm() {
             </RHFSelect>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} md={2} mb={1}>
           <RHFSelect name="Тип объекта" label="Тип объекта" placeholder="Тип объекта">
             <option value="" />
             {typeObject.map((option) => (
@@ -67,7 +65,7 @@ export default function UserNewEditForm() {
           </RHFSelect>
         </Grid>
 
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} md={2} mb={1}>
           <RHFSelect name="Владелец" label="Владелец" placeholder="Владелец">
             <option value="" />
             {owner.map((option) => (
@@ -77,7 +75,7 @@ export default function UserNewEditForm() {
             ))}
           </RHFSelect>
         </Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} md={2} mb={1}>
           <RHFSelect name="Период" label="Период" placeholder="Период">
             <option value="" />
             {timePeriod.map((option) => (
@@ -92,7 +90,7 @@ export default function UserNewEditForm() {
         <LoadingButton type='submit' variant="contained">
           Отфильтровать
         </LoadingButton>
-        <LoadingButton type="reset" variant="outlined">
+        <LoadingButton type="reset" variant="contained">
           Сбросить фильтр
         </LoadingButton>
       </Stack>
