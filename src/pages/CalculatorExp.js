@@ -25,6 +25,9 @@ import TotalCard from "../sections/calculatorExp/TotalCard";
 import ExpenseTable from "../sections/calculatorExp/ExpenseTable"
 import IncomeExpenseChart from "../sections/calculatorExp/IncomeExpenseChart"
 
+//mock
+import { _totalSum } from "src/_mock";
+
 // ----------------------------------------------------------------------
 
 export default function PageTwo() {
@@ -89,7 +92,7 @@ export default function PageTwo() {
           {/* left side end */}
           {/* right side */}
           <Grid item xs={12} md={5} lg={5}>
-            <TotalCard />
+            <TotalCard total={_totalSum} />
           </Grid>
           {/* right side end */}
         </Grid>
