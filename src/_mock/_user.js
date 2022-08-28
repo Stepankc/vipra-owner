@@ -155,3 +155,8 @@ export const _paymentsTable = [...Array(10)].map((_, index) => ({
   summ: _mock.number.price(index),
   typeAccrual: randomInArray(['Заработок', 'бонус','']),
 }));
+
+export const _totalSum = {
+  income: randomNumberRange(400, 1000),
+  expense: randomNumberRange(99, 399),
+};
