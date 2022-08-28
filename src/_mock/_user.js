@@ -160,3 +160,8 @@ export const _totalSum = {
   income: randomNumberRange(400, 1000),
   expense: randomNumberRange(99, 399),
 };
+
+export const _EarnedInDay = {
+  income: randomNumberRange(400, 1000),
+  energy: randomNumberRange(99, 399),
+};
