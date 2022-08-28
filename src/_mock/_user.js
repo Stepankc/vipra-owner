@@ -141,3 +141,10 @@ export const _expenseTable = [...Array(10)].map((_, index) => ({
   typeExpense: randomInArray(['энергозатраты', '']),
   typeIncome: randomInArray(['Заработок', 'бонус','']),
 }));
+
+export const _accrualTable = [...Array(10)].map((_, index) => ({
+  id: _mock.id(index),
+  time: randomInArray(['01/05/2002', '01/12/2020','21/02/2022']),
+  summ: _mock.number.price(index),
+  typeAccrual: randomInArray(['Заработок', 'бонус','']),
+}));
