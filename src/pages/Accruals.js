@@ -4,11 +4,13 @@ import { Container, Typography, Divider, Grid } from "@mui/material";
 import useSettings from "../hooks/useSettings";
 // components
 import Page from "../components/Page";
-import ExpenseTable from "../sections/accruals/AccrualTable"
+import ExpenseTable from "../sections/accruals/AccrualTable";
+import AccrualChart from "../sections/accruals/AccrualChart";
+import BalanceCard from "../sections/accruals/BalanceCard";
 
 // ----------------------------------------------------------------------
 
-export default function PageTwo() {
+export default function Accrual() {
   const { themeStretch } = useSettings();
 
   return (
@@ -19,9 +21,19 @@ export default function PageTwo() {
         </Typography>
         <Divider sx={{ bgcolor: "black", mb: 2 }} />
         <Grid container spacing={2}>
-        <Grid item xs={12} md={8} lg={8}>
-        <ExpenseTable />
-        </Grid>
+          <Grid item xs={12} md={8} lg={8}>
+            <Grid container gap={2}>
+              <Grid item xs={12} md={12} lg={12}>
+                <ExpenseTable />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                <AccrualChart />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={4} lg={4}>
+            <BalanceCard />
+          </Grid>
         </Grid>
       </Container>
     </Page>
