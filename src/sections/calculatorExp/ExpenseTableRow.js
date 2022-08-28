@@ -16,9 +16,9 @@ InvoiceTableRow.propTypes = {
   onDeleteRow: PropTypes.func,
 };
 
-export default function InvoiceTableRow({ row, selected, onSelectRow, onViewRow, onDeleteRow }) {
+export default function InvoiceTableRow({ row, selected, onSelectRow,  onDeleteRow }) {
 
-  const { time, price, typeExpense, typeIncome } = row;
+  const { time, summ, typeExpense, typeIncome } = row;
 
   const [openMenu, setOpenMenuActions] = useState(null);
 
@@ -41,7 +41,7 @@ export default function InvoiceTableRow({ row, selected, onSelectRow, onViewRow,
       </TableCell>
 
       <TableCell align="left" sx={{ textTransform: 'capitalize' }}>
-        {price} руб
+        {summ} руб
       </TableCell>
 
       <TableCell align="left" sx={{ textTransform: 'capitalize' }}>
