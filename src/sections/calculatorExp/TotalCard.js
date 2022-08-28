@@ -4,7 +4,6 @@ import { Card, Grid, Typography } from '@mui/material';
 
 export default function TotalCard(props) {
 
-  console.log(props.total)
   return (
     <Card sx={{p:2}}>
       <Grid container  rowGap={5} spacing={2}>
@@ -23,4 +22,4 @@ export default function TotalCard(props) {
       </Grid>
     </Card>
   );
-}
+} 
