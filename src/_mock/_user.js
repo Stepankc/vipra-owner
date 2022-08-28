@@ -178,3 +178,8 @@ export const _TimeLineMock = [...Array(5)].map((_, index) => ({
   status: ['Идёт зарядка', 'Страница заблокирована','Станция включена','Станция выключена','Ошибка в работе станции'][index],
   info: ['','Время платного ожидания - 10 мин','станция работает 20 мин','','Код ошибки - 100 Сообщить в поддержку'][index]
 }));
+
+export const _pay = {
+  balance: randomNumberRange(400, 1000),
+  payment: randomNumberRange(400, 1500),
+};

@@ -8,6 +8,9 @@ import ExpenseTable from "../sections/accruals/AccrualTable";
 import AccrualChart from "../sections/accruals/AccrualChart";
 import BalanceCard from "../sections/accruals/BalanceCard";
 
+//mock
+import { _pay } from "src/_mock";
+
 // ----------------------------------------------------------------------
 
 export default function Accrual() {
@@ -32,7 +35,7 @@ export default function Accrual() {
             </Grid>
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
-            <BalanceCard />
+            <BalanceCard balance={_pay.balance}/>
           </Grid>
         </Grid>
       </Container>

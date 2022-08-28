@@ -8,6 +8,9 @@ import PaymentsTable from "../sections/Payments/PaymentsTable";
 import PaymentsChart from "../sections/Payments/PaymentsChart";
 import PaymentsCard from "../sections/Payments/PaymentsCard";
 
+//mock
+import { _pay } from "src/_mock";
+
 // ----------------------------------------------------------------------
 
 export default function Payments() {
@@ -32,7 +35,7 @@ export default function Payments() {
             </Grid>
           </Grid>
           <Grid item xs={12} md={4} lg={4}>
-            <PaymentsCard />
+            <PaymentsCard payment={_pay.payment}/>
           </Grid>
         </Grid>
       </Container>
