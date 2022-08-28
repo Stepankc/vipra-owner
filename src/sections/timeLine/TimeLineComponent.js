@@ -4,7 +4,6 @@ import { Grid, Card, Typography } from "@mui/material";
 // ----------------------------------------------------------------------
 
 export default function TimeLineComponent(props) {
-    console.log(props.line.createDate)
   return (
     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
     <Card
