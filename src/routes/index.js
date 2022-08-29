@@ -31,8 +31,6 @@ export default function Router() {
       children: [
         { element: <Navigate to="/dashboard/monitoring" replace />, index: true },
         { path: 'monitoring', element: <Monitoring /> },
-        { path: 'statistics', element: <Statistics /> },
-        { path: 'charging', element: <Charging /> },
         { path: 'ReportingPage', element: <ReportingPage /> },
         { path: 'Profile', element: <Profile /> },
         {
@@ -88,8 +86,6 @@ export default function Router() {
 
 // Dashboard
 const Monitoring = Loadable(lazy(() => import('../pages/Monitoring')));
-const Statistics = Loadable(lazy(() => import('../pages/Statistics')));
-const Charging = Loadable(lazy(() => import('../pages/Charging')));
 const Chat = Loadable(lazy(() => import('../pages/Chat')));
 const NotFound = Loadable(lazy(() => import('../pages/Page404')));
 const AddNewStantion = Loadable(lazy(() => import('../pages/AddNewStantion')));
