@@ -183,3 +183,12 @@ export const _pay = {
   balance: randomNumberRange(400, 1000),
   payment: randomNumberRange(400, 1500),
 };
+
+export const _reportList = [...Array(24)].map((_, index) => ({
+  id: _mock.id(index),
+  name: _mock.name.fullName(index),
+  nameStation:['2', '3', '4','12','333'][index],
+  status: randomInArray(['В ожидании', 'Принят', 'На рассмотрении']),
+  sumCharge: randomNumberRange(1, 100),
+  earnMoney: randomNumberRange(1000, 10000),
+}));
