@@ -1,35 +1,92 @@
 // @mui
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Divider, Grid, Card, Box, Button, TextField, InputAdornment } from '@mui/material';
 // hooks
 import useSettings from '../hooks/useSettings';
 // components
 import Page from '../components/Page';
-
+import React from 'react';
+import { Icon } from "@iconify/react";
 // ----------------------------------------------------------------------
 
 export default function PageTwo() {
   const { themeStretch } = useSettings();
 
+  const [namevalue, setNamevalue] = React.useState('Иванов Иван Иванович');
+
+  const nameChange = (event) => {
+    setNamevalue(event.target.namevalue);
+  };
+
+
+  const personalCard = (
+    <React.Fragment>
+      <Card sx={{ p: 2 }}>
+        <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
+          <Typography variant="h5" color="initial">Личные данные</Typography>
+          <Icon
+            icon="fa6-regular:pen-to-square"
+            width="24"
+            height="24"
+            cursor="pointer"
+          />
+        </Box>
+
+        <TextField id="outlined-basic" fullWidth InputProps={{startAdornment: <InputAdornment position="start">ФИО</InputAdornment>}} value={namevalue} onChange={nameChange}/>
+
+      </Card>
+    </React.Fragment>
+  )
+
+  const paymentCard = (
+    <React.Fragment>
+      <Card sx={{ p: 2 }}>
+        <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'}>
+          <Typography variant="h5" color="initial">Платежные данные</Typography>
+          <Icon
+            icon="fa6-regular:pen-to-square"
+            width="24"
+            height="24"
+            cursor="pointer"
+          />
+        </Box>
+
+
+      </Card>
+    </React.Fragment>
+  )
+
+  const passwordCard = (
+    <React.Fragment>
+      <Card sx={{ p: 2 }}>
+        <Typography variant="h5" color="initial">Пароль</Typography>
+
+
+      </Card>
+    </React.Fragment>
+  )
+
   return (
-    <Page title="Page qwe">
+    <Page title="Профиль">
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
-          Page qwe
+          Настройки профиля
         </Typography>
-        <Typography gutterBottom>
-          Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod
-          ligula urna in dolor. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus blandit leo
-          ut odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id
-          purus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. In consectetuer turpis ut velit.
-          Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
-          Vestibulum suscipit nulla quis orci. Nam commodo suscipit quam. Sed a libero.
-        </Typography>
-        <Typography>
-          Praesent ac sem eget est egestas volutpat. Phasellus viverra nulla ut metus varius laoreet. Curabitur
-          ullamcorper ultricies nisi. Ut non enim eleifend felis pretium feugiat. Donec mi odio, faucibus at,
-          scelerisque quis, convallis in, nisi. Fusce vel dui. Quisque libero metus, condimentum nec, tempor a, commodo
-          mollis, magna. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Cras dapibus.
-        </Typography>
+        <Divider sx={{ bgcolor: 'black', mb: 2 }} />
+
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            {personalCard}
+          </Grid>
+
+          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            {paymentCard}
+          </Grid>
+
+          <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
+            {passwordCard}
+          </Grid>
+        </Grid>
+
       </Container>
     </Page>
   );
