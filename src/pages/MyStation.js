@@ -7,11 +7,11 @@ import Page from '../components/Page';
 
 // ----------------------------------------------------------------------
 
-export default function PageTwo() {
+export default function MyStation() {
   const { themeStretch } = useSettings();
 
   return (
-    <Page title="Page qwe">
+    <Page title="Мои станции">
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
           Page qwe
@@ -28,7 +28,7 @@ export default function PageTwo() {
           Praesent ac sem eget est egestas volutpat. Phasellus viverra nulla ut metus varius laoreet. Curabitur
           ullamcorper ultricies nisi. Ut non enim eleifend felis pretium feugiat. Donec mi odio, faucibus at,
           scelerisque quis, convallis in, nisi. Fusce vel dui. Quisque libero metus, condimentum nec, tempor a, commodo
-          mollis, magna. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Cras dapibus.
+          mollis, magna. I1n enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Cras dapibus.
         </Typography>
       </Container>
     </Page>
