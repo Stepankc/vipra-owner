@@ -12,9 +12,35 @@ export default function PageTwo() {
   const { themeStretch } = useSettings();
 
   const [namevalue, setNamevalue] = React.useState('Иванов Иван Иванович');
+  const [phonevalue, setPhonevalue] = React.useState('+7 (999) 123-45-67');
+  const [emailvalue, setEmailvalue] = React.useState('ivan.ivanov@mail.ru');
+  const [tinvalue, setTinvalue] = React.useState('1234567890')
 
   const nameChange = (event) => {
     setNamevalue(event.target.namevalue);
+  };
+
+  const phoneChange = (event) => {
+    setPhonevalue(event.target.phonevalue);
+  };
+
+  const emailChange = (event) => {
+    setEmailvalue(event.target.emailvalue);
+  };
+
+  const tinChange = (event) => {
+    setTinvalue(event.target.tinvalue);
+  };
+
+  const [changePersonalData, setChangePersonalData] = React.useState(true)
+  const [changePaymentData, setChangePaymentData] = React.useState(true)
+
+  const personalDataOnChange = (event) => {
+    setChangePersonalData(false);
+  };
+
+  const paymentDataOnChange = (event) => {
+    setChangePaymentData(false);
   };
 
 
@@ -28,11 +54,14 @@ export default function PageTwo() {
             width="24"
             height="24"
             cursor="pointer"
+            onClick={personalDataOnChange}
           />
         </Box>
 
-        <TextField id="outlined-basic" fullWidth InputProps={{startAdornment: <InputAdornment position="start">ФИО</InputAdornment>}} value={namevalue} onChange={nameChange}/>
-
+        <TextField disabled={changePersonalData} sx={{ pt: 2 }} id="outlined-basic" fullWidth InputProps={{ startAdornment: <InputAdornment position="start">ФИО</InputAdornment> }} value={namevalue} onChange={nameChange} />
+        <TextField disabled={changePersonalData} sx={{ pt: 1 }} id="outlined-basic" fullWidth InputProps={{ startAdornment: <InputAdornment position="start">Телефон</InputAdornment> }} value={phonevalue} onChange={phoneChange} />
+        <TextField disabled={changePersonalData} sx={{ py: 1 }} id="outlined-basic" fullWidth InputProps={{ startAdornment: <InputAdornment position="start">Email</InputAdornment> }} value={emailvalue} onChange={emailChange} />
+        {!changePersonalData && <Button variant="outlined" onClick={setChangePersonalData} fullWidth>Сохранить</Button>}
       </Card>
     </React.Fragment>
   )
@@ -47,9 +76,12 @@ export default function PageTwo() {
             width="24"
             height="24"
             cursor="pointer"
+            onClick={paymentDataOnChange}
           />
         </Box>
 
+        <TextField disabled={changePaymentData} sx={{ py: 1, mt: 1 }} id="outlined-basic" fullWidth InputProps={{ startAdornment: <InputAdornment position="start">ИНН</InputAdornment> }} value={tinvalue} onChange={tinChange} />
+        {!changePaymentData && <Button variant="outlined" onClick={setChangePaymentData} fullWidth>Сохранить</Button>}
 
       </Card>
     </React.Fragment>
@@ -59,8 +91,9 @@ export default function PageTwo() {
     <React.Fragment>
       <Card sx={{ p: 2 }}>
         <Typography variant="h5" color="initial">Пароль</Typography>
-
-
+        <TextField sx={{ mt: 2 }} id="outlined-basic" label="Новый пароль" variant="outlined" fullWidth />
+        <TextField sx={{ mt: 2, mb: 1}} id="outlined-basic" label="Повторить пароль" variant="outlined" fullWidth />
+        <Button variant="outlined" fullWidth>Изменить пароль</Button>
       </Card>
     </React.Fragment>
   )
