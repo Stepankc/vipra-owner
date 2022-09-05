@@ -6,7 +6,6 @@ export { default as MonitoringStantionsComponent1 } from './MonitoringStantionCo
 export { default as MonitoringStantionsComponent2 } from './MonitoringStantionComponent2';
 export { default as MonitoringStateComponent } from './MonitoringStateComponent';
 export { default as NetworkStatus } from './NetworkStatus';
-export { default as AddValue } from './AddValue';
 export { default as Booked } from './Booked';
 export { default as Broken } from './Broken';
 export { default as Occupied } from './Occupied';
