@@ -22,7 +22,8 @@ import {
   Broken,
   Offline,
   Online,
-  OnlineWaiting
+  OnlineWaiting,
+  AddValue
 } from "../sections/monitoring";
 
 // ----------------------------------------------------------------------
@@ -90,7 +91,7 @@ export default function Monitoring() {
               <NetworkStatus />
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
-              <NetworkStatus />
+              <AddValue />
             </Grid>
           </Grid>
           <Grid item xs={12} md={12} lg={4}>

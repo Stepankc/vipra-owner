@@ -21,9 +21,6 @@ const CHART_DATA = [
 export default function CountEnergy() {
   const [seriesData, setSeriesData] = useState(2020);
 
-  const handleChangeSeriesData = (event) => {
-    setSeriesData(Number(event.target.value));
-  };
 
   const chartOptions = merge(BaseOptionChart(), {
     legend: { position: 'top', horizontalAlign: 'right' },

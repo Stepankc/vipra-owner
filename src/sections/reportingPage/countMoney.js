@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 // @mui
-import { Card, CardHeader, Box, TextField } from '@mui/material';
+import { Card, CardHeader, Box } from '@mui/material';
 //
 import { BaseOptionChart } from '../../components/chart';
 
@@ -20,10 +20,6 @@ const CHART_DATA = [
 
 export default function CountEnergy() {
   const [seriesData, setSeriesData] = useState(2020);
-
-  const handleChangeSeriesData = (event) => {
-    setSeriesData(Number(event.target.value));
-  };
 
   const chartOptions = merge(BaseOptionChart(), {
     legend: { position: 'top', horizontalAlign: 'right' },

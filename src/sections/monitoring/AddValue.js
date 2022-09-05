@@ -1,67 +1,54 @@
-import merge from 'lodash/merge';
-import ReactApexChart from 'react-apexcharts';
+import React from 'react';
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Card, Typography, Box } from '@mui/material';
-// utils
-import { fNumber } from '../../utils/formatNumber';
-//
-import { BaseOptionChart } from '../../components/chart';
+import { Card, Typography, Box, Modal } from '@mui/material';
+
 
 // ----------------------------------------------------------------------
 
-const CHART_SIZE = { width: 106, height: 106 };
-const TOTAL_CHECK_OUT = 18472;
-const CHART_DATA_CHECK_OUT = [64];
 
 export default function AddValue() {
-  const theme = useTheme();
 
-  const chartOptionsCheckIn = merge(BaseOptionChart(), {
-    chart: { sparkline: { enabled: true } },
-    grid: {
-      padding: {
-        top: -9,
-        bottom: -9,
-      },
-    },
-    legend: { show: false },
-    plotOptions: {
-      radialBar: {
-        hollow: { size: '64%' },
-        track: { margin: 0 },
-        dataLabels: {
-          name: { show: false },
-          value: {
-            offsetY: 6,
-            fontSize: theme.typography.subtitle2.fontSize,
-          },
-        },
-      },
-    },
-  });
 
-  const chartOptionsCheckOut = {
-    ...chartOptionsCheckIn,
-    colors: [theme.palette.chart.yellow[0]],
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '90vw',
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
   };
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <Card sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', py: 8, height: '200px', justifyContent: 'space-evenly' }}>
-          <ReactApexChart
-            type="radialBar"
-            series={CHART_DATA_CHECK_OUT}
-            options={chartOptionsCheckOut}
-            {...CHART_SIZE}
-          />
-          <Box>
-            <Typography variant="h4" textAlign={'center'}>
-              {fNumber(TOTAL_CHECK_OUT)}
-            </Typography>
-            <Typography variant="body2" textAlign={'center'}>
-              Число занятых станций
-            </Typography>
-          </Box>
-    </Card>
+    <>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Выбрать показатель
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Lorem
+          </Typography>
+        </Box>
+      </Modal>
+      <Card onClick={handleOpen} sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', py: 8, height: '200px', justifyContent: 'space-evenly', cursor: 'pointer' }}>
+        <Box>
+          <Typography variant="h6" textAlign={'center'}>
+            Добавить показатель
+          </Typography>
+        </Box>
+      </Card>
+    </>
   );
 }
