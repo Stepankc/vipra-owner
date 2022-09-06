@@ -130,11 +130,11 @@ export default function Monitoring() {
             </Stack>
           </Grid>
           <Grid item container spacing={1} lg={8}>
-            {networkstatus == true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><NetworkStatus /></Grid> : ''}
-            {booked == true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Booked /></Grid> : ''}
-            {broken == true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Broken /></Grid> : ''}
-            {offline == true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Offline /></Grid> : ''}
-            {online == true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Online /></Grid> : ''}
+            {networkstatus === true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><NetworkStatus /></Grid> : ''}
+            {booked === true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Booked /></Grid> : ''}
+            {broken === true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Broken /></Grid> : ''}
+            {offline === true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Offline /></Grid> : ''}
+            {online === true ? <Grid item xs={12} sm={12} md={12} lg={4} xl={4}><Online /></Grid> : ''}
             <Grid item xs={12} sm={12} md={12} lg={4} xl={4}>
               <Card sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', py: 8, height: '200px', justifyContent: 'space-evenly', cursor: 'pointer' }} onClick={handleOpen}>
                 <Typography variant="h6" textAlign={'center'}>
