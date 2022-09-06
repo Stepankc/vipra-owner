@@ -5,6 +5,7 @@ import { Box, Divider, Typography, Stack, MenuItem, Avatar } from '@mui/material
 // components
 import MenuPopover from '../../../components/MenuPopover';
 import { IconButtonAnimate } from '../../../components/animate';
+import { Link } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -78,7 +79,7 @@ export default function AccountPopover() {
         <Stack sx={{ p: 1 }}>
           {MENU_OPTIONS.map((option) => (
             <MenuItem key={option.label} to={option.linkTo} onClick={handleClose}>
-              {option.label}
+          <Link to="/dashboard/Profile" style={{ textDecoration: 'none', color:'#212b36' }}> {option.label}</Link>
             </MenuItem>
           ))}
         </Stack>
